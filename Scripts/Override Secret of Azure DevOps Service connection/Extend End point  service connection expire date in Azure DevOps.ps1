@@ -24,4 +24,4 @@ $base64AuthInfo = [System.Convert]::ToBase64String([System.Text.Encoding]::ASCII
 
 $uri="$devops_org/_apis/serviceendpoint/endpoints/${endpoint_id}?operation=&api-version=6.0-preview.4"
 
-Get-Content -Raw sc.json  | Invoke-RestMethod $uri -Method 'PUT' -ContentType "application/json" -Headers @{Authorization="Basic $base64AuthInfo"}
+Get-Content -Raw sc.json  | Invoke-RestMethod $uri -Method 'PUT' -ContentType "application/json" -Headers @{'Authorization'="Basic $base64AuthInfo"}
